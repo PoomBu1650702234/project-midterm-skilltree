@@ -13,6 +13,8 @@ public class SkillTreeManager : MonoBehaviour
     public List<Skill> skillPref = new List<Skill>(); 
     public List<SkillTree> skillTreeList = new List<SkillTree>(); 
 
+    public event Action OnSkillTreeChange;
+
     void Awake()
     {
         if (skillTreeManagerInstance != null)
@@ -31,6 +33,7 @@ public class SkillTreeManager : MonoBehaviour
         skillTreeList.Add(new SkillTree(skillPref[0]));
         PrintSkillTreeHierarchy(skillTreeList[0].rootSkill,"");
         
+        OnSkillTreeChange?.Invoke();
     }
 
     public Skill GetSkillInTree(Skill rootSkill , string desireSkillName)
