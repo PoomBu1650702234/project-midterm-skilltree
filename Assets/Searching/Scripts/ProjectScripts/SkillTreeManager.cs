@@ -10,6 +10,7 @@ public class SkillTreeManager : MonoBehaviour
 {
     public static SkillTreeManager skillTreeManagerInstance;
     
+    public GameObject textUIPref;
     public List<Skill> skillPref = new List<Skill>(); 
     public List<SkillTree> skillTreeList = new List<SkillTree>(); 
 
@@ -36,10 +37,15 @@ public class SkillTreeManager : MonoBehaviour
         OnSkillTreeChange?.Invoke();
     }
 
-    public Skill GetSkillInTree(Skill rootSkill , string desireSkillName)
+    void Update()
+    {
+        
+    }
+
+    public Skill GetSkillInTree(Skill rootSkill , Skill desireSkill)
     {
         //print(rootSkill.SkillName);
-        if (rootSkill.SkillName == desireSkillName)
+        if (rootSkill == desireSkill)
         {
             return rootSkill;
         }
@@ -47,7 +53,7 @@ public class SkillTreeManager : MonoBehaviour
         // Loop through each child skill to search recursively
         for (int i = 0; i < rootSkill.childSkill.Count; i++)
         {
-            Skill foundSkill = GetSkillInTree(rootSkill.childSkill[i], desireSkillName);
+            Skill foundSkill = GetSkillInTree(rootSkill.childSkill[i], desireSkill);
             if (foundSkill != null) // if found in the child, return it
             {
                 return foundSkill;

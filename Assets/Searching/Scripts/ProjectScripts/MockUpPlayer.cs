@@ -12,7 +12,7 @@ public class MockUpPlayer : MonoBehaviour
         if(Input.GetKeyDown("1"))
         {
             print("Fire1");
-            Skill testSkill = SkillTreeManager.skillTreeManagerInstance.GetSkillInTree(SkillTreeManager.skillTreeManagerInstance.skillTreeList[0].rootSkill,"FireBallSpread_MoreSpread");
+            Skill testSkill = SkillTreeManager.skillTreeManagerInstance.GetSkillInTree(SkillTreeManager.skillTreeManagerInstance.skillTreeList[0].rootSkill,skillSlots[0]);
             if(testSkill != null)
             {
                 print($"found {testSkill.SkillName}");
