@@ -66,22 +66,65 @@ public class SkillTreeManager : MonoBehaviour
 
     public void Learn(Skill skill)
     {
-        
+        if(skill.isLearned == false && skill.isLock == false)
+        {
+            skill.isLearned = true;
+            LockOtherSkillPath(skill);
+        }
+        OnSkillTreeChange?.Invoke();
     }
 
     public void UnLearn(Skill skill)
     {
+        if(skill.isLearned == true && skill.isLock == false)
+        {
+            skill.isLearned = false;
+            //Unlock same depth skill
+            foreach (Skill _skill in skill.parentSkill.childSkill)
+            {
+                skill.isLearned = false;
+                skill.isLock = false;
+            }
 
+        }
+        OnSkillTreeChange?.Invoke();
     }
 
-    public void ResetSkillTree(SkillTree skillTree)
+    public void ResetSkillTree(Skill _rootSkill)
     {
+        _rootSkill.isLearned = false;
+        _rootSkill.isLock = false;
+        for (int i = 0; i < _rootSkill.childSkill.Count; i++)
+        {
+            ResetSkillTree(_rootSkill.childSkill[i]);
+        }
+        OnSkillTreeChange?.Invoke();
+    }
 
+    public void ResetAllSkillTree()
+    {
+        for(int i = 0; i < skillTreeList.Count ; i++)
+        {
+            ResetSkillTree(skillTreeList[i].rootSkill);
+        }
+        OnSkillTreeChange?.Invoke();
     }
 
     private void LockOtherSkillPath(Skill onlyAvalableSkill)
     {
-
+        if(onlyAvalableSkill.parentSkill == null)
+        {
+            OnSkillTreeChange?.Invoke();
+            return;
+        }
+        foreach (Skill skill in onlyAvalableSkill.parentSkill.childSkill)
+        {
+            if(skill != onlyAvalableSkill)
+            {
+                skill.isLock = true;
+                skill.isLearned = false;
+            }
+        }
     }
 
     public void PrintSkillTreeNoIndent(Skill _rootSkill)
@@ -114,5 +157,36 @@ public class SkillTreeManager : MonoBehaviour
         skillList.Add(parentSkill);
         return GetTrackBackSkillToParentList(skillList);
     }
+
+    public Skill GetRootSkill(Skill skill)
+    {
+        Skill parentSkill = skill.parentSkill;
+
+        if (parentSkill == null)
+        {
+            return skill;
+        }else
+        {
+            return GetRootSkill(parentSkill);
+        }
+    }
+
+    public Skill GetNextActiveableSkill(Skill skill)
+    {
+        foreach (Skill _skill in skill.childSkill)
+        {
+            if(_skill.isLearned == true && _skill.isLock == false)
+            {
+                return _skill;
+            }
+        }
+        return null;
+    }
+
+    public void UpdateSkillInfo()
+    {
+        OnSkillTreeChange?.Invoke();
+    }
+    
 
 }
