@@ -49,6 +49,12 @@ public class SkillInteractPromt : MonoBehaviour
         {
             return;
         }
+        Skill nextActiveAbleSkill = SkillTreeManager.skillTreeManagerInstance.GetNextActiveableSkill(skill);
+        if(nextActiveAbleSkill != null)
+        {
+            //You have to UnLearn that skill before this skill
+            return;
+        }
         SkillTreeManager.skillTreeManagerInstance.UnLearn(skill);
         Close();
     }
