@@ -1,4 +1,4 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
@@ -23,7 +23,7 @@ public class SkillTreeUI : MonoBehaviour
 
     void UiUpdate()
     {
-        print("Gott update signal");
+        //print("Gott update signal");
         if(skill == null)
         {
             return;
@@ -35,6 +35,21 @@ public class SkillTreeUI : MonoBehaviour
         TextMeshProUGUI textUI = textObj.GetComponent<TextMeshProUGUI>();
         textUI.text = $"Skill: {skill.SkillName}\n Cost: {skill.skillPointCost} \n Lock = {skill.isLock} \n Learned = {skill.isLearned} \n Parent = {skill.parentSkill?.SkillName}";
         
+        if(skill.isLearned == true)
+        {
+            Image image = gameObject.GetComponent<Image>();
+            image.color = Color.green;
+        }
+        else if(skill.isLearned == false && skill.isLock == false)
+        {
+            Image image = gameObject.GetComponent<Image>();
+            image.color = Color.grey;
+        }
+        else
+        {
+            Image image = gameObject.GetComponent<Image>();
+            image.color = Color.red;
+        }
     }
 
     void ClearUI()
