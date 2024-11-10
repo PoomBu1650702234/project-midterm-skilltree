@@ -28,17 +28,27 @@ public class SkillInteractPromt : MonoBehaviour
         learnButton.onClick.AddListener(OnLearnButtonClick);
         unLearnButton.onClick.AddListener(OnUnlearnButtonClick);
         closeButton.onClick.AddListener(OnCloseButtonClick);
+
+        Close();
     }
 
     // Methods to be called on button click
     private void OnLearnButtonClick()
     {
+        if(skill.isLearned == true)
+        {
+            return;
+        }
         SkillTreeManager.skillTreeManagerInstance.Learn(skill);
         Close();
     }
 
     private void OnUnlearnButtonClick()
     {
+        if(skill.isLearned == false)
+        {
+            return;
+        }
         SkillTreeManager.skillTreeManagerInstance.UnLearn(skill);
         Close();
     }

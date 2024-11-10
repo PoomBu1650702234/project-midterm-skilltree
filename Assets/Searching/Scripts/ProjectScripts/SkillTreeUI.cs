@@ -51,12 +51,16 @@ public class SkillTreeUI : MonoBehaviour
         {
             return;
         }
-        
+
         if(skill.parentSkill != null && skill.parentSkill.isLearned == true && skill.parentSkill.isLock == false)
         {
             SkillInteractPromt.instance.Open(skill);
         }
         else if(skill.parentSkill == null && skill.isLearned == false)
+        {
+            SkillInteractPromt.instance.Open(skill);
+        }
+        else if(skill.isLearned == true)
         {
             SkillInteractPromt.instance.Open(skill);
         }

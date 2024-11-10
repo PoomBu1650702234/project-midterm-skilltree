@@ -78,12 +78,17 @@ public class SkillTreeManager : MonoBehaviour
     {
         if(skill.isLearned == true && skill.isLock == false)
         {
-            skill.isLearned = false;
+            if(skill.parentSkill == null)
+            {
+                skill.isLearned = false;
+                OnSkillTreeChange?.Invoke();
+                return;
+            }
             //Unlock same depth skill
             foreach (Skill _skill in skill.parentSkill.childSkill)
             {
-                skill.isLearned = false;
-                skill.isLock = false;
+                _skill.isLearned = false;
+                _skill.isLock = false;
             }
 
         }
