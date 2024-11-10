@@ -16,6 +16,8 @@ public class SkillTreeUI : MonoBehaviour
 
         // Assuming OnSkillTreeChange is an event in SkillTreeManager, subscribe to it.
         skillTreeManagerInstance.OnSkillTreeChange += UiUpdate;
+        Button button = gameObject.GetComponent<Button>();
+        button.onClick.AddListener(OnButtonClick);
         
     }
 
@@ -41,6 +43,24 @@ public class SkillTreeUI : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+    }
+
+    void OnButtonClick()
+    {
+        if(skill.isLock == true)
+        {
+            return;
+        }
+        
+        if(skill.parentSkill != null && skill.parentSkill.isLearned == true && skill.parentSkill.isLock == false)
+        {
+            SkillInteractPromt.instance.Open(skill);
+        }
+        else if(skill.parentSkill == null && skill.isLearned == false)
+        {
+            SkillInteractPromt.instance.Open(skill);
+        }
+        
     }
 
     
