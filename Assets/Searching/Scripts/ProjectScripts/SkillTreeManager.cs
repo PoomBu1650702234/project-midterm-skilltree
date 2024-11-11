@@ -146,7 +146,8 @@ public class SkillTreeManager : MonoBehaviour
     {
         if(skill.isChainReaction == false)
         {
-           Skill bestVersion = GetBestVersionOfSkill(skill);
+           Skill rootSkill = GetRootSkill(skill);
+           Skill bestVersion = GetBestVersionOfSkill(rootSkill);
            player.skillSlots[slot] = bestVersion;
         }
         else if(skill.isChainReaction == true)
