@@ -1514,7 +1514,7 @@ MonoBehaviour:
   skillPref:
   - {fileID: 1606752989}
   skillTreeList: []
-  player: {fileID: 0}
+  player: {fileID: 1259214519}
 --- !u!4 &611211933
 Transform:
   m_ObjectHideFlags: 0
@@ -3343,8 +3343,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillSlots:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!4 &1259214520
