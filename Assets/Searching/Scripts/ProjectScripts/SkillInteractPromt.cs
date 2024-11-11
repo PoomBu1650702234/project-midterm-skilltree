@@ -45,6 +45,7 @@ public class SkillInteractPromt : MonoBehaviour
             return;
         }
         SkillTreeManager.skillTreeManagerInstance.EquipSkill(skill,0);
+        Close();
 
     }
 
@@ -55,6 +56,7 @@ public class SkillInteractPromt : MonoBehaviour
             return;
         }
         SkillTreeManager.skillTreeManagerInstance.EquipSkill(skill,1);
+        Close();
 
     }
     // Methods to be called on button click

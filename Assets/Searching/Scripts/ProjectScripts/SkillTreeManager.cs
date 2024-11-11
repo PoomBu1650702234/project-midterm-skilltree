@@ -77,31 +77,15 @@ public class SkillTreeManager : MonoBehaviour
             //Check if player have parent of this skill equip in Slots
             for (int i = 0; i < player.skillSlots.Length; i++)
             {
-                if(player.skillSlots[i] == skill.parentSkill)
+                if(player.skillSlots[i] == skill.parentSkill && skill.parentSkill != null)
                 {
-                    AdjustSkillSlotsOfPlayerWhenLearn(i,skill);
+                    AdjustSkillSlotsOfPlayer(i,skill);
                 }
             }
         }
         OnSkillTreeChange?.Invoke();
     }
-
-    public void AdjustSkillSlotsOfPlayerWhenLearn(int slot,Skill skill)
-    {
-        if(skill.isChainReaction == true)
-        {
-            Skill rootSkill = GetRootSkill(skill);
-            player.skillSlots[slot] = rootSkill;
-        }
-        else if(skill.isChainReaction == false)
-        {
-            Skill bestSkill = GetBestVersionOfSkill(skill);
-            player.skillSlots[slot] = bestSkill;
-        }
-        OnSkillSlotsChange?.Invoke();
-    }
-
-
+    
     public void UnLearn(Skill skill)
     {
         if(skill.isLearned == true && skill.isLock == false)
@@ -110,6 +94,16 @@ public class SkillTreeManager : MonoBehaviour
             {
                 skill.isLearned = false;
                 OnSkillTreeChange?.Invoke();
+                //Remove Skill form slot if this unlearn skill is equip
+                for (int i = 0; i < player.skillSlots.Length; i++)
+                {
+                    if(player.skillSlots[i] == skill)
+                    {
+                        player.skillSlots[i] = null;
+                    }
+
+                }
+                OnSkillSlotsChange?.Invoke();
                 return;
             }
             //Unlock same depth skill
@@ -118,19 +112,34 @@ public class SkillTreeManager : MonoBehaviour
                 _skill.isLearned = false;
                 _skill.isLock = false;
             }
-            //Remove Skill form slot if this unlearn skill is equip
+
             for (int i = 0; i < player.skillSlots.Length; i++)
             {
                 if(player.skillSlots[i] == skill)
                 {
-                    player.skillSlots[i] = null;
+                    AdjustSkillSlotsOfPlayer(i, skill);
                 }
 
             }
             OnSkillSlotsChange?.Invoke();
-
         }
         OnSkillTreeChange?.Invoke();
+    }
+
+    public void AdjustSkillSlotsOfPlayer(int slot,Skill skill)
+    {
+        if(skill.isChainReaction == true)
+        {
+            Skill rootSkill = GetRootSkill(skill);
+            player.skillSlots[slot] = rootSkill;
+        }
+        else if(skill.isChainReaction == false)
+        {
+            Skill rootSkill = GetRootSkill(skill);
+            Skill bestSkill = GetBestVersionOfSkill(rootSkill);
+            player.skillSlots[slot] = bestSkill;
+        }
+        OnSkillSlotsChange?.Invoke();
     }
 
     public void EquipSkill(Skill skill , int slot)
@@ -145,6 +154,7 @@ public class SkillTreeManager : MonoBehaviour
             Skill rootSkill = GetRootSkill(skill);
             player.skillSlots[slot] = rootSkill;
         }
+        OnSkillSlotsChange?.Invoke();
     }
 
     public void ResetSkillTree(Skill _rootSkill)
