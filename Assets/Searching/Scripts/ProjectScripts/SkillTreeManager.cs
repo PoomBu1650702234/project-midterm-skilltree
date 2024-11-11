@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -15,6 +16,9 @@ public class SkillTreeManager : MonoBehaviour
     public List<SkillTree> skillTreeList = new List<SkillTree>(); 
 
     public event Action OnSkillTreeChange;
+    public event Action OnSkillSlotsChange;
+
+    public MockUpPlayer player;
 
     void Awake()
     {
@@ -70,9 +74,33 @@ public class SkillTreeManager : MonoBehaviour
         {
             skill.isLearned = true;
             LockOtherSkillPath(skill);
+            //Check if player have parent of this skill equip in Slots
+            for (int i = 0; i < player.skillSlots.Length; i++)
+            {
+                if(player.skillSlots[i] == skill.parentSkill)
+                {
+                    AdjustSkillSlotsOfPlayerWhenLearn(i,skill);
+                }
+            }
         }
         OnSkillTreeChange?.Invoke();
     }
+
+    public void AdjustSkillSlotsOfPlayerWhenLearn(int slot,Skill skill)
+    {
+        if(skill.isChainReaction == true)
+        {
+            Skill rootSkill = GetRootSkill(skill);
+            player.skillSlots[slot] = rootSkill;
+        }
+        else if(skill.isChainReaction == false)
+        {
+            Skill bestSkill = GetBestVersionOfSkill(skill);
+            player.skillSlots[slot] = bestSkill;
+        }
+        OnSkillSlotsChange?.Invoke();
+    }
+
 
     public void UnLearn(Skill skill)
     {
@@ -90,9 +118,33 @@ public class SkillTreeManager : MonoBehaviour
                 _skill.isLearned = false;
                 _skill.isLock = false;
             }
+            //Remove Skill form slot if this unlearn skill is equip
+            for (int i = 0; i < player.skillSlots.Length; i++)
+            {
+                if(player.skillSlots[i] == skill)
+                {
+                    player.skillSlots[i] = null;
+                }
+
+            }
+            OnSkillSlotsChange?.Invoke();
 
         }
         OnSkillTreeChange?.Invoke();
+    }
+
+    public void EquipSkill(Skill skill , int slot)
+    {
+        if(skill.isChainReaction == false)
+        {
+           Skill bestVersion = GetBestVersionOfSkill(skill);
+           player.skillSlots[slot] = bestVersion;
+        }
+        else if(skill.isChainReaction == true)
+        {
+            Skill rootSkill = GetRootSkill(skill);
+            player.skillSlots[slot] = rootSkill;
+        }
     }
 
     public void ResetSkillTree(Skill _rootSkill)
@@ -183,6 +235,47 @@ public class SkillTreeManager : MonoBehaviour
             if(_skill.isLearned == true && _skill.isLock == false)
             {
                 return _skill;
+            }
+        }
+        return null;
+    }
+
+    
+    public void SkillHandle(Skill skill,int slot)
+    {
+        if(skill.isChainReaction == false)
+        {
+           skill.Activate();
+        }
+        else if(skill.isChainReaction == true)
+        {
+            skill.Activate();
+            Skill nextSkill = GetNextActiveableSkill(skill);
+            if(nextSkill != null)
+            {
+                player.skillSlots[slot] = nextSkill;
+            }
+            else if(nextSkill == null)
+            {
+                player.skillSlots[slot] = GetRootSkill(skill);
+            }
+        }
+    }
+
+    public Skill GetBestVersionOfSkill(Skill skill)
+    {
+        Skill bestVersion = null;
+        Skill previousSkill = null;
+        Skill currentSkill = skill;
+
+        while (bestVersion == null)
+        {
+            previousSkill = currentSkill;
+            currentSkill = GetNextActiveableSkill(currentSkill);
+            if(currentSkill == null)
+            {
+                bestVersion = previousSkill;
+                return bestVersion;
             }
         }
         return null;

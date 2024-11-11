@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,6 +15,9 @@ public class SkillInteractPromt : MonoBehaviour
     public Button unLearnButton;
     public Button closeButton;
 
+    public Button equipSLot1;
+    public Button equipSLot2;
+
     void Awake()
     {
         if(instance != null)
@@ -28,10 +32,31 @@ public class SkillInteractPromt : MonoBehaviour
         learnButton.onClick.AddListener(OnLearnButtonClick);
         unLearnButton.onClick.AddListener(OnUnlearnButtonClick);
         closeButton.onClick.AddListener(OnCloseButtonClick);
+        equipSLot1.onClick.AddListener(OnEquipButton1Click);
+        equipSLot2.onClick.AddListener(OnEquipButton2Click);
 
         Close();
     }
 
+    private void OnEquipButton1Click()
+    {
+        if(skill.isLock == true || skill.isLearned == false)
+        {
+            return;
+        }
+        SkillTreeManager.skillTreeManagerInstance.EquipSkill(skill,0);
+
+    }
+
+    private void OnEquipButton2Click()
+    {
+        if(skill.isLock == true || skill.isLearned == false)
+        {
+            return;
+        }
+        SkillTreeManager.skillTreeManagerInstance.EquipSkill(skill,1);
+
+    }
     // Methods to be called on button click
     private void OnLearnButtonClick()
     {

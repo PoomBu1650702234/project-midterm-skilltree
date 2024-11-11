@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Skill : MonoBehaviour 
@@ -13,6 +14,13 @@ public class Skill : MonoBehaviour
     public bool isLock = false; // for disable other tree
     public int skillPointCost = 0;
 
+    void Start()
+    {
+        if(parentSkill != null)
+        {
+            isChainReaction = parentSkill.isChainReaction;
+        }
+    }
     public virtual void Activate()
     {
         Debug.Log(SkillName);
