@@ -85,7 +85,7 @@ public class SkillTreeManager : MonoBehaviour
         }
         OnSkillTreeChange?.Invoke();
     }
-    
+
     public void UnLearn(Skill skill)
     {
         if(skill.isLearned == true && skill.isLock == false)
@@ -269,7 +269,9 @@ public class SkillTreeManager : MonoBehaviour
             {
                 player.skillSlots[slot] = GetRootSkill(skill);
             }
+            
         }
+        OnSkillSlotsChange?.Invoke();
     }
 
     public Skill GetBestVersionOfSkill(Skill skill)

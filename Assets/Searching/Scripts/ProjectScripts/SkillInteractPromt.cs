@@ -44,6 +44,14 @@ public class SkillInteractPromt : MonoBehaviour
         {
             return;
         }
+        for (int i = 0; i < MockUpPlayer.instance.skillSlots.Length; i++)
+        {
+            if(skill == MockUpPlayer.instance.skillSlots[i])
+            {
+                //can't equip same skill
+                return;
+            }
+        }
         SkillTreeManager.skillTreeManagerInstance.EquipSkill(skill,0);
         Close();
 
@@ -54,6 +62,14 @@ public class SkillInteractPromt : MonoBehaviour
         if(skill.isLock == true || skill.isLearned == false)
         {
             return;
+        }
+        for (int i = 0; i < MockUpPlayer.instance.skillSlots.Length; i++)
+        {
+            if(skill == MockUpPlayer.instance.skillSlots[i])
+            {
+                //can't equip same skill
+                return;
+            }
         }
         SkillTreeManager.skillTreeManagerInstance.EquipSkill(skill,1);
         Close();
