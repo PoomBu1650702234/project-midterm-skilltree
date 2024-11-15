@@ -41,11 +41,6 @@ public class SkillTreeManager : MonoBehaviour
         OnSkillTreeChange?.Invoke();
     }
 
-    void Update()
-    {
-        
-    }
-
     public Skill GetSkillInTree(Skill rootSkill , Skill desireSkill)
     {
         //print(rootSkill.SkillName);
@@ -90,6 +85,7 @@ public class SkillTreeManager : MonoBehaviour
     {
         if(skill.isLearned == true && skill.isLock == false)
         {
+            //For root skill
             if(skill.parentSkill == null)
             {
                 skill.isLearned = false;
@@ -112,7 +108,7 @@ public class SkillTreeManager : MonoBehaviour
                 _skill.isLearned = false;
                 _skill.isLock = false;
             }
-
+            //Remove Skill form slot if this unlearn skill is equip
             for (int i = 0; i < player.skillSlots.Length; i++)
             {
                 if(player.skillSlots[i] == skill)
@@ -171,11 +167,16 @@ public class SkillTreeManager : MonoBehaviour
 
     public void ResetAllSkillTree()
     {
+        for(int i = 0 ; i < player.skillSlots.Length ; i++)
+        {
+            player.skillSlots[i] = null;
+        }
         for(int i = 0; i < skillTreeList.Count ; i++)
         {
             ResetSkillTree(skillTreeList[i].rootSkill);
         }
         OnSkillTreeChange?.Invoke();
+        OnSkillSlotsChange?.Invoke();
     }
 
     private void LockOtherSkillPath(Skill onlyAvalableSkill)
@@ -297,6 +298,7 @@ public class SkillTreeManager : MonoBehaviour
     public void UpdateSkillInfo()
     {
         OnSkillTreeChange?.Invoke();
+        OnSkillSlotsChange?.Invoke();
     }
     
 
