@@ -257,61 +257,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21225709}
   m_CullTransparentMesh: 1
---- !u!1 &48883333
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 48883335}
-  - component: {fileID: 48883334}
-  m_Layer: 0
-  m_Name: FireBallSpread
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &48883334
+--- !u!114 &48883334 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 9096142169412605685, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
+  m_PrefabInstance: {fileID: 7236164148011450182}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 48883333}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e6cee202c512a4469156e3dadb4d6d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillName: FireBallSpread
-  parentSkill: {fileID: 1606752989}
-  childSkill:
-  - {fileID: 831385217}
-  - {fileID: 1246291908}
-  isLearned: 0
-  isChainReaction: 0
-  isLock: 0
-  skillPointCost: 0
---- !u!4 &48883335
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 48883333}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 831385216}
-  - {fileID: 1246291909}
-  m_Father: {fileID: 1606752988}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &54049213
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,56 +1437,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582719689}
   m_CullTransparentMesh: 1
---- !u!1 &611211931
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 611211933}
-  - component: {fileID: 611211932}
-  m_Layer: 0
-  m_Name: SkillTreeManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &611211932
+--- !u!114 &611211932 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2213395432670025106, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
+  m_PrefabInstance: {fileID: 7236164148011450182}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611211931}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73228090d874f744599f1665f0f54b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textUIPref: {fileID: 6028229544620824481, guid: 95da6222c56ac0147be35b3ab5359917, type: 3}
-  skillPref:
-  - {fileID: 1606752989}
-  skillTreeList: []
-  player: {fileID: 1259214519}
---- !u!4 &611211933
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611211931}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1606752988}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &615518389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2295,57 +2212,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743767227}
   m_CullTransparentMesh: 1
---- !u!1 &831385215
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 831385216}
-  - component: {fileID: 831385217}
-  m_Layer: 0
-  m_Name: FireBallSpread_MoreSpread
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &831385216
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831385215}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 48883335}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &831385217
+--- !u!114 &831385217 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8641872883828339628, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
+  m_PrefabInstance: {fileID: 7236164148011450182}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831385215}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66bcbf94e8c990141b04f412c10fb479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillName: FireBallSpread_MoreSpread
-  parentSkill: {fileID: 48883334}
-  childSkill: []
-  isLearned: 0
-  isChainReaction: 0
-  isLock: 0
-  skillPointCost: 0
 --- !u!1 &837856037
 GameObject:
   m_ObjectHideFlags: 0
@@ -3217,57 +3094,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240159059}
   m_CullTransparentMesh: 1
---- !u!1 &1246291907
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1246291909}
-  - component: {fileID: 1246291908}
-  m_Layer: 0
-  m_Name: FireBallSpread_CircleSpread
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1246291908
+--- !u!114 &1246291908 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4769721213039828329, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
+  m_PrefabInstance: {fileID: 7236164148011450182}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246291907}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a73f81364a72294491334d669a3edd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillName: FireBallSpread_CircleSpread
-  parentSkill: {fileID: 48883334}
-  childSkill: []
-  isLearned: 0
-  isChainReaction: 0
-  isLock: 0
-  skillPointCost: 0
---- !u!4 &1246291909
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246291907}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 48883335}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1251676097
 GameObject:
   m_ObjectHideFlags: 0
@@ -3883,112 +3720,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447487470}
   m_CullTransparentMesh: 1
---- !u!1 &1578955669
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1578955670}
-  - component: {fileID: 1578955671}
-  m_Layer: 0
-  m_Name: FireBallBig
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1578955670
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578955669}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1606752988}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1578955671
+--- !u!114 &1578955671 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6891733339919773150, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
+  m_PrefabInstance: {fileID: 7236164148011450182}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578955669}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 064d17776edc756419179f4724afc3d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillName: FireBallBig
-  parentSkill: {fileID: 1606752989}
-  childSkill: []
-  isLearned: 0
-  isChainReaction: 0
-  isLock: 0
-  skillPointCost: 0
---- !u!1 &1606752986
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1606752988}
-  - component: {fileID: 1606752989}
-  m_Layer: 0
-  m_Name: FireBall
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1606752988
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1606752986}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1578955670}
-  - {fileID: 48883335}
-  m_Father: {fileID: 611211933}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1606752989
+--- !u!114 &1606752989 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3288804179093272828, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
+  m_PrefabInstance: {fileID: 7236164148011450182}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1606752986}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 782e6d622bdf4b246a27bb147e2370e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillName: FireBall
-  parentSkill: {fileID: 0}
-  childSkill:
-  - {fileID: 1578955671}
-  - {fileID: 48883334}
-  isLearned: 0
-  isChainReaction: 0
-  isLock: 0
-  skillPointCost: 0
 --- !u!1 &1695267809
 GameObject:
   m_ObjectHideFlags: 0
@@ -4623,6 +4376,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slot: 0
   skill: {fileID: 0}
+--- !u!1001 &7236164148011450182
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1057057724904975140, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
+      propertyPath: m_Name
+      value: SkillTreeManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213395432670025106, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1259214519}
+    - target: {fileID: 8954505663752049204, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954505663752049204, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954505663752049204, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954505663752049204, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954505663752049204, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954505663752049204, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954505663752049204, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954505663752049204, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954505663752049204, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954505663752049204, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6c32576848a1cc247976d7a7be18a8c2, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4630,6 +4444,6 @@ SceneRoots:
   - {fileID: 664212924}
   - {fileID: 997319612}
   - {fileID: 1259214520}
-  - {fileID: 611211933}
+  - {fileID: 7236164148011450182}
   - {fileID: 1139908266}
   - {fileID: 71787411}
