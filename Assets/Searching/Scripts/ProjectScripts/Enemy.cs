@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour,IDamageable
         hp -= damage;
         if(hp <= 0)
         {
-            hp = 0;
+            hp = 100;
         }
     }
 
