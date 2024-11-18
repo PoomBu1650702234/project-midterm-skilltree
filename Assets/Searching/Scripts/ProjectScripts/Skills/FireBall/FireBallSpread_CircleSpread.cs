@@ -22,6 +22,8 @@ public class FireBallSpread_CircleSpread : Skill
         Shoot(RotateVector(mouseDir, 210));
         Shoot(RotateVector(mouseDir, 240));
         Shoot(RotateVector(mouseDir, 270));
+        Shoot(RotateVector(mouseDir, 300));
+        Shoot(RotateVector(mouseDir, 330));
 
     }
 

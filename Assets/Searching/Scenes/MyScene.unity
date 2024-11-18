@@ -5703,7 +5703,7 @@ MonoBehaviour:
   skillDamage: 5
   stunnDuration: 0
   lifeTime: 5
-  skillPref: {fileID: 0}
+  skillPref: {fileID: 8527796905157368328, guid: b49448dbb7bf23244b49b0c9eb61cfa9, type: 3}
 --- !u!4 &2798013487845677616
 Transform:
   m_ObjectHideFlags: 0
