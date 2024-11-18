@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour,IDamageable
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -36,6 +36,8 @@ public class Enemy : MonoBehaviour,IDamageable
 
     public void TakeDamage(int damage)
     {
+        print($"enemy take damage {damage}");
+        
         hp -= damage;
         if(hp <= 0)
         {
@@ -43,8 +45,9 @@ public class Enemy : MonoBehaviour,IDamageable
         }
     }
 
-    public void GetStunned(int duration)
+    public void GetStunned(float duration)
     {
+        print($"enemy get stun for {duration} sec");
         stunnedDuration += duration;
     }
 }

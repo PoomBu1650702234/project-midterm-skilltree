@@ -14,6 +14,10 @@ public class Skill : MonoBehaviour
     public bool isLock = false; // for disable other tree
     public int skillPointCost = 0;
 
+    public int skillDamage = 0;
+    public float stunnDuration = 0f;
+    public float lifeTime = 10f;
+
     void Start()
     {
         if(parentSkill != null)

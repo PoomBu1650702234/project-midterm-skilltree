@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class Flash : Skill
 {
+    [SerializeField] GameObject skillPref;
     public override void Activate()
     {
-        base.Activate();
+        if(skillPref == null)
+        {
+            return;
+        }
+
+        GameObject skill = Instantiate(skillPref);
+        skill.transform.position = MockUpPlayer.instance.transform.position;
     }
 }

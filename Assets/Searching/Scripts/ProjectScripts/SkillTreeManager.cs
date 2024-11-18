@@ -31,13 +31,11 @@ public class SkillTreeManager : MonoBehaviour
 
     void Start()
     {
-        //Create Moc up Skill Trees by drah and drop in inspector
-       
-        //add root skill to Skill Tree list
-        //all child skill is add manualy in inspector
-        skillTreeList.Add(new SkillTree(skillPref[0]));
-        PrintSkillTreeHierarchy(skillTreeList[0].rootSkill,"");
-        
+        foreach (Skill skill in skillPref)
+        {
+            SkillTree rootSkill = new SkillTree(skill);
+            skillTreeList.Add(rootSkill);
+        }
         OnSkillTreeChange?.Invoke();
     }
 
