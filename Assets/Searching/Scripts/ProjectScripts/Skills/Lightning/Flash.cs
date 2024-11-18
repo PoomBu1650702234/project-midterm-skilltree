@@ -14,5 +14,9 @@ public class Flash : Skill
 
         GameObject skill = Instantiate(skillPref);
         skill.transform.position = MockUpPlayer.instance.transform.position;
+
+        Flash_Skill flash_Skill = skill.GetComponent<Flash_Skill>();
+        flash_Skill.spawnedSkillClass = this;
+
     }
 }
