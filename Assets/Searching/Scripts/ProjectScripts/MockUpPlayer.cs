@@ -53,4 +53,13 @@ public class MockUpPlayer : MonoBehaviour
     {
         transform.position += InputAxis * moveSpeed * Time.deltaTime;
     }
+
+    public Vector3 GetMousePosition()
+    {
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition.z = Mathf.Abs(Camera.main.transform.position.z); // Set depth to the camera's distance
+        
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        return mouseWorldPosition;
+    }
 }

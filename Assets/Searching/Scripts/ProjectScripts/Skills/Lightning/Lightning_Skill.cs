@@ -1,14 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Lightning_Skill : MonoBehaviour
 {
     //set form the class that spawn this obj
     public Skill spawnedSkillClass;
-    
-    private void OnCollisionEnter2D(Collision2D collision)
+    public Vector3 direction;
+
+    //--------------------
+    public float speed = 15;
+    public float lifetime = 0;
+
+    private void Update()
+    {
+        lifetime += Time.deltaTime;
+        if(spawnedSkillClass != null)
+        {
+            if(spawnedSkillClass.lifeTime <= lifetime)
+            {
+                Destroy(gameObject);
+            }
+            
+        }
+
+        transform.position += direction * Time.deltaTime * speed;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         // Try to get the IDamageable interface from the collided object
         IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
@@ -21,6 +42,7 @@ public class Lightning_Skill : MonoBehaviour
             {
                 damageable.GetStunned(spawnedSkillClass.stunnDuration);
             }
+            Destroy(gameObject);
         }
     }
 }

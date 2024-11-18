@@ -6,9 +6,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour,IDamageable
 {
     [SerializeField]private int hp;
-    private bool isStun = false;
-    private float stunnedDuration = 0;
-    private TextMeshProUGUI text;
+    [SerializeField]private bool isStun = false;
+    [SerializeField]private float stunnedDuration = 0;
+    [SerializeField]private TextMeshProUGUI text;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour,IDamageable
     {
         if(text != null)
         {
-            text.text = $"HP : {hp} Stunned : {isStun}\n CC Duration {stunnedDuration}";
+            text.text = $"HP : {hp}\n Stunned : {isStun}\n CC Duration {stunnedDuration}";
         }
         if(stunnedDuration <= 0)
         {

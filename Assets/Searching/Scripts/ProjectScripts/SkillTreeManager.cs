@@ -298,6 +298,5 @@ public class SkillTreeManager : MonoBehaviour
         OnSkillTreeChange?.Invoke();
         OnSkillSlotsChange?.Invoke();
     }
-    
 
 }
