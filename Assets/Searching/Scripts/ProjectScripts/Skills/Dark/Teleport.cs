@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Teleport : Skill
@@ -12,15 +13,17 @@ public class Teleport : Skill
             return;
         }
 
-        /*GameObject skill = Instantiate(skillPref);
-        skill.transform.position = MockUpPlayer.instance.transform.position;
+        //Teleport player and activate skill on the old pos and new pos
+        Vector3 oldPos = MockUpPlayer.instance.transform.position;
+        GameObject skill1 = Instantiate(skillPref);
+        skill1.transform.position = oldPos;
+        Lullaby.instance.OutSourceActivate(oldPos);
 
-        FireBall_Skill fireBall_Skill = skill.GetComponent<FireBall_Skill>();
-        fireBall_Skill.spawnedSkillClass = this;
+        Vector3 newPos = MockUpPlayer.instance.GetMousePosition();
+        GameObject skill2 = Instantiate(skillPref);
+        skill2.transform.position = newPos;
+        Lullaby.instance.OutSourceActivate(newPos);
 
-        // Calculate the direction from the player to the mouse position
-        Vector3 direction = (MockUpPlayer.instance.GetMousePosition() - MockUpPlayer.instance.transform.position).normalized;
-        fireBall_Skill.direction = direction;*/
-
+        MockUpPlayer.instance.transform.position = newPos;
     }
 }
