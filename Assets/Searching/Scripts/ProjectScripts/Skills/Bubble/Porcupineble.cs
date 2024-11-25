@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Porcupineble : Skill
 {
     [SerializeField] GameObject skillPref;
+
+    [SerializeField]private float radius = 5f;
+    [SerializeField]private int bubbleCounts = 10;
     public override void Activate()
     {
         if(skillPref == null)
@@ -12,15 +16,19 @@ public class Porcupineble : Skill
             return;
         }
 
-        /*GameObject skill = Instantiate(skillPref);
-        skill.transform.position = MockUpPlayer.instance.transform.position;
+        for (int i = 0; i < bubbleCounts; i++)
+        {
+            float angle = (2 * Mathf.PI * i) / bubbleCounts; // Evenly distribute the angle
 
-        FireBall_Skill fireBall_Skill = skill.GetComponent<FireBall_Skill>();
-        fireBall_Skill.spawnedSkillClass = this;
+            float positionX = Mathf.Cos(angle) * radius; // Correct circular distribution
+            float positionY = Mathf.Sin(angle) * radius;
+            Vector3 skillPos = MockUpPlayer.instance.transform.position + new Vector3(positionX, positionY, 0);
 
-        // Calculate the direction from the player to the mouse position
-        Vector3 direction = (MockUpPlayer.instance.GetMousePosition() - MockUpPlayer.instance.transform.position).normalized;
-        fireBall_Skill.direction = direction;*/
+            GameObject skill = Instantiate(skillPref);
+            skill.transform.position = skillPos;
 
+            Porcupineble_Skill porcupineble_Skill = skill.GetComponent<Porcupineble_Skill>();
+            porcupineble_Skill.spawnedSkillClass = this;
+        }
     }
 }
