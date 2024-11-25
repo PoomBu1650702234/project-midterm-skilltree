@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Lullaby_Skill : MonoBehaviour
 {
+    
     //set form the class that spawn this obj
     public Skill spawnedSkillClass;
     public Vector3 direction;
