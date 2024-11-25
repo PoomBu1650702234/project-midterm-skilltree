@@ -740,6 +740,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111805713}
   m_CullTransparentMesh: 1
+--- !u!1 &179829777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 179829779}
+  - component: {fileID: 179829778}
+  m_Layer: 0
+  m_Name: Bigble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &179829778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179829777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d816a804d86e85940aff53676408de36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillName: Bigble
+  parentSkill: {fileID: 497626398}
+  childSkill: []
+  isLearned: 0
+  isChainReaction: 0
+  isLock: 0
+  skillPointCost: 0
+  skillDamage: 0
+  stunnDuration: 0
+  lifeTime: 10
+  skillPref: {fileID: 0}
+--- !u!4 &179829779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179829777}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 497626397}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &203289917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,6 +1409,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417562637}
   m_CullTransparentMesh: 1
+--- !u!1 &497626396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 497626397}
+  - component: {fileID: 497626398}
+  m_Layer: 0
+  m_Name: Bubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &497626397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497626396}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 179829779}
+  - {fileID: 793764993}
+  m_Father: {fileID: 1740869410572840306}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &497626398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497626396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e74da75a23630ac47855cbd9a23e638e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillName: Bubble
+  parentSkill: {fileID: 0}
+  childSkill:
+  - {fileID: 179829778}
+  - {fileID: 793764994}
+  isLearned: 0
+  isChainReaction: 0
+  isLock: 0
+  skillPointCost: 0
+  skillDamage: 0
+  stunnDuration: 0
+  lifeTime: 10
+  skillPref: {fileID: 0}
 --- !u!1 &502152561
 GameObject:
   m_ObjectHideFlags: 0
@@ -2426,6 +2540,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679879949}
   m_CullTransparentMesh: 1
+--- !u!1 &693330173
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 693330174}
+  - component: {fileID: 693330175}
+  m_Layer: 0
+  m_Name: Bombble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &693330174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693330173}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 793764993}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &693330175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693330173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d83278a53d32a9d428767fd80f15511b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillName: Bombble
+  parentSkill: {fileID: 793764994}
+  childSkill: []
+  isLearned: 0
+  isChainReaction: 0
+  isLock: 0
+  skillPointCost: 0
+  skillDamage: 0
+  stunnDuration: 0
+  lifeTime: 10
+  skillPref: {fileID: 0}
 --- !u!1 &743767227
 GameObject:
   m_ObjectHideFlags: 0
@@ -2560,6 +2729,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743767227}
   m_CullTransparentMesh: 1
+--- !u!1 &793764992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 793764993}
+  - component: {fileID: 793764994}
+  m_Layer: 0
+  m_Name: Popble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &793764993
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793764992}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1232323032}
+  - {fileID: 693330174}
+  m_Father: {fileID: 497626397}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &793764994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793764992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf1835e34151618408c76bb6c70aedb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillName: Popble
+  parentSkill: {fileID: 497626398}
+  childSkill:
+  - {fileID: 1232323031}
+  - {fileID: 693330175}
+  isLearned: 0
+  isChainReaction: 0
+  isLock: 0
+  skillPointCost: 0
+  skillDamage: 0
+  stunnDuration: 0
+  lifeTime: 10
+  skillPref: {fileID: 0}
 --- !u!1 &837856037
 GameObject:
   m_ObjectHideFlags: 0
@@ -3484,6 +3712,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199949059}
   m_CullTransparentMesh: 1
+--- !u!1 &1232323030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1232323032}
+  - component: {fileID: 1232323031}
+  m_Layer: 0
+  m_Name: Porcupineble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1232323031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232323030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2aa13dedbbc64a4f90f0f35b24d3740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillName: Poecuoineble
+  parentSkill: {fileID: 793764994}
+  childSkill: []
+  isLearned: 0
+  isChainReaction: 0
+  isLock: 0
+  skillPointCost: 0
+  skillDamage: 0
+  stunnDuration: 0
+  lifeTime: 10
+  skillPref: {fileID: 0}
+--- !u!4 &1232323032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232323030}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 793764993}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1240159059
 GameObject:
   m_ObjectHideFlags: 0
@@ -5562,6 +5845,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4045283353406813738}
+  - {fileID: 497626397}
   - {fileID: 7100719068960130595}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
