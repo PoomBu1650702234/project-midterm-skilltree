@@ -12,15 +12,13 @@ public class Popble : Skill
             return;
         }
 
-        /*GameObject skill = Instantiate(skillPref);
+        GameObject skill = Instantiate(skillPref);
         skill.transform.position = MockUpPlayer.instance.transform.position;
 
-        FireBall_Skill fireBall_Skill = skill.GetComponent<FireBall_Skill>();
-        fireBall_Skill.spawnedSkillClass = this;
+        Popble_Skill popble_Skill = skill.GetComponent<Popble_Skill>();
+        popble_Skill.spawnedSkillClass = this;
 
-        // Calculate the direction from the player to the mouse position
-        Vector3 direction = (MockUpPlayer.instance.GetMousePosition() - MockUpPlayer.instance.transform.position).normalized;
-        fireBall_Skill.direction = direction;*/
+        popble_Skill.direction = Vector3.zero;
 
     }
 }
