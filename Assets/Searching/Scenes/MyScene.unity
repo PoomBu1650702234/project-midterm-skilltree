@@ -773,7 +773,7 @@ MonoBehaviour:
   parentSkill: {fileID: 497626398}
   childSkill: []
   isLearned: 0
-  isChainReaction: 0
+  isChainReaction: 1
   isLock: 0
   skillPointCost: 0
   skillDamage: 5
@@ -2856,13 +2856,13 @@ MonoBehaviour:
   parentSkill: {fileID: 793764994}
   childSkill: []
   isLearned: 0
-  isChainReaction: 0
+  isChainReaction: 1
   isLock: 0
   skillPointCost: 0
-  skillDamage: 0
+  skillDamage: 5
   stunnDuration: 0
-  lifeTime: 10
-  skillPref: {fileID: 0}
+  lifeTime: 3
+  skillPref: {fileID: 3541242928321357129, guid: e875b5945713e2242ac793801fa65285, type: 3}
 --- !u!1 &743767227
 GameObject:
   m_ObjectHideFlags: 0
@@ -3049,7 +3049,7 @@ MonoBehaviour:
   - {fileID: 1232323031}
   - {fileID: 693330175}
   isLearned: 0
-  isChainReaction: 0
+  isChainReaction: 1
   isLock: 0
   skillPointCost: 0
   skillDamage: 1
@@ -4330,13 +4330,15 @@ MonoBehaviour:
   parentSkill: {fileID: 793764994}
   childSkill: []
   isLearned: 0
-  isChainReaction: 0
+  isChainReaction: 1
   isLock: 0
   skillPointCost: 0
   skillDamage: 1
   stunnDuration: 0
   lifeTime: 10
   skillPref: {fileID: 8899705930633445877, guid: d2c376288b1f557479b63472930b4ca4, type: 3}
+  radius: 10
+  bubbleCounts: 3
 --- !u!4 &1232323032
 Transform:
   m_ObjectHideFlags: 0

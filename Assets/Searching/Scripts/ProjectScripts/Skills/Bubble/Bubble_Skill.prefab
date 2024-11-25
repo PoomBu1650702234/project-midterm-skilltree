@@ -662,7 +662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnedSkillClass: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
-  speed: 20
+  speed: 10
   lifetime: 0
 --- !u!1 &2403541023596657204
 GameObject:
