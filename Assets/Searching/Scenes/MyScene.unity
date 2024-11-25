@@ -776,10 +776,10 @@ MonoBehaviour:
   isChainReaction: 0
   isLock: 0
   skillPointCost: 0
-  skillDamage: 0
-  stunnDuration: 0
-  lifeTime: 10
-  skillPref: {fileID: 0}
+  skillDamage: 5
+  stunnDuration: 4
+  lifeTime: 5
+  skillPref: {fileID: 5155382102913021958, guid: 7680d41cdbf834d47af7ae7511577f23, type: 3}
 --- !u!4 &179829779
 Transform:
   m_ObjectHideFlags: 0
@@ -1595,7 +1595,7 @@ MonoBehaviour:
   - {fileID: 179829778}
   - {fileID: 793764994}
   isLearned: 0
-  isChainReaction: 0
+  isChainReaction: 1
   isLock: 0
   skillPointCost: 0
   skillDamage: 0

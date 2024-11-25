@@ -12,15 +12,15 @@ public class Bigble : Skill
             return;
         }
 
-        /*GameObject skill = Instantiate(skillPref);
+        GameObject skill = Instantiate(skillPref);
         skill.transform.position = MockUpPlayer.instance.transform.position;
 
-        FireBall_Skill fireBall_Skill = skill.GetComponent<FireBall_Skill>();
-        fireBall_Skill.spawnedSkillClass = this;
+        Bigble_Skill bigble_Skill = skill.GetComponent<Bigble_Skill>();
+        bigble_Skill.spawnedSkillClass = this;
 
         // Calculate the direction from the player to the mouse position
         Vector3 direction = (MockUpPlayer.instance.GetMousePosition() - MockUpPlayer.instance.transform.position).normalized;
-        fireBall_Skill.direction = direction;*/
+        bigble_Skill.direction = direction;
 
     }
 }
