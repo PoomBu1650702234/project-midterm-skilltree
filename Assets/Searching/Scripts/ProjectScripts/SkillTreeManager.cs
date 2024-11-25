@@ -12,6 +12,7 @@ public class SkillTreeManager : MonoBehaviour
     public static SkillTreeManager skillTreeManagerInstance;
     
     public GameObject textUIPref;
+    public GameObject imageUIPref;
     public List<Skill> skillPref = new List<Skill>(); 
     public List<SkillTree> skillTreeList = new List<SkillTree>(); 
 

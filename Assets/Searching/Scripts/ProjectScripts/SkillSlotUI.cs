@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SkillSlotUI : MonoBehaviour
 {
@@ -30,6 +31,15 @@ public class SkillSlotUI : MonoBehaviour
         textObj.transform.SetParent(transform , false);
         TextMeshProUGUI textUI = textObj.GetComponent<TextMeshProUGUI>();
         textUI.text = $"{skill.SkillName}";
+
+        GameObject imageObj = Instantiate(skillTreeManagerInstance.imageUIPref);
+        imageObj.transform.SetParent(transform , false);
+        Image skillimage = imageObj.GetComponent<Image>();
+
+        if(skill.skillIcon != null)
+        {
+            skillimage.sprite = skill.skillIcon;
+        }
     }
     void ClearUI()
     {

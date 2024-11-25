@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Skill : MonoBehaviour 
 {
     public string SkillName = null;
+    public Sprite skillIcon;
     public Skill parentSkill = null;
     public List<Skill> childSkill = null; 
 
