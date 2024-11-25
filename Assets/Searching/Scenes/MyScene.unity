@@ -7487,7 +7487,7 @@ GameObject:
   - component: {fileID: 1082669952}
   - component: {fileID: 1082669953}
   m_Layer: 0
-  m_Name: Dark
+  m_Name: ShadowSlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
