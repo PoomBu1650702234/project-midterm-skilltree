@@ -227,12 +227,17 @@ public class SkillTreeManager : MonoBehaviour
 
     public Skill GetRootSkill(Skill skill)
     {
+        if(skill == null)
+        {
+            return null;
+        }
         Skill parentSkill = skill.parentSkill;
 
         if (parentSkill == null)
         {
             return skill;
-        }else
+        }
+        else
         {
             return GetRootSkill(parentSkill);
         }

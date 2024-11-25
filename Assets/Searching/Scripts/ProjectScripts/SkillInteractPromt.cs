@@ -46,7 +46,7 @@ public class SkillInteractPromt : MonoBehaviour
         }
         for (int i = 0; i < MockUpPlayer.instance.skillSlots.Length; i++)
         {
-            if(skill == MockUpPlayer.instance.skillSlots[i])
+            if(skill == MockUpPlayer.instance.skillSlots[i] || SkillTreeManager.skillTreeManagerInstance.GetRootSkill(skill) == SkillTreeManager.skillTreeManagerInstance.GetRootSkill(MockUpPlayer.instance.skillSlots[i]))
             {
                 //can't equip same skill
                 return;
@@ -65,7 +65,7 @@ public class SkillInteractPromt : MonoBehaviour
         }
         for (int i = 0; i < MockUpPlayer.instance.skillSlots.Length; i++)
         {
-            if(skill == MockUpPlayer.instance.skillSlots[i])
+            if(skill == MockUpPlayer.instance.skillSlots[i] || SkillTreeManager.skillTreeManagerInstance.GetRootSkill(skill) == SkillTreeManager.skillTreeManagerInstance.GetRootSkill(MockUpPlayer.instance.skillSlots[i]))
             {
                 //can't equip same skill
                 return;
