@@ -12,7 +12,6 @@ public class Skill : MonoBehaviour
     public bool isLearned = false;
     public bool isChainReaction = false;
     public bool isLock = false; // for disable other tree
-    public int skillPointCost = 0;
 
     public int skillDamage = 0;
     public float stunnDuration = 0f;

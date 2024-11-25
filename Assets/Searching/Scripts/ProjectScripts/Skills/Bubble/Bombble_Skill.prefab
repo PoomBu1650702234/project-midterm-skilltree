@@ -115,7 +115,7 @@ MonoBehaviour:
   lifetime: 0
   explosionPref: {fileID: 3541242928321357129}
   isExplosionPref: 0
-  bubbleCounts: 5
+  bubbleCounts: 10
   radius: 3
 --- !u!1 &4665124990556035566
 GameObject:

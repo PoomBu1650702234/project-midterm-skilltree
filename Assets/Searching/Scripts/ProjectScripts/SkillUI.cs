@@ -33,7 +33,7 @@ public class SkillUI : MonoBehaviour
         GameObject textObj = Instantiate(skillTreeManagerInstance.textUIPref);
         textObj.transform.SetParent(transform , false);
         TextMeshProUGUI textUI = textObj.GetComponent<TextMeshProUGUI>();
-        textUI.text = $"Skill: {skill.SkillName}\n Cost: {skill.skillPointCost} \n Lock = {skill.isLock} \n Learned = {skill.isLearned} \n Parent = {skill.parentSkill?.SkillName}";
+        textUI.text = $"Skill: {skill.SkillName} \n Lock = {skill.isLock} \n Learned = {skill.isLearned} \n Parent = {skill.parentSkill?.SkillName}";
         
         if(skill.isLearned == true)
         {
