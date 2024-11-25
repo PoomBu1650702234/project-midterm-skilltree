@@ -12,15 +12,10 @@ public class Blackhole : Skill
             return;
         }
 
-        /*GameObject skill = Instantiate(skillPref);
+        GameObject skill = Instantiate(skillPref);
         skill.transform.position = MockUpPlayer.instance.transform.position;
 
-        FireBall_Skill fireBall_Skill = skill.GetComponent<FireBall_Skill>();
-        fireBall_Skill.spawnedSkillClass = this;
-
-        // Calculate the direction from the player to the mouse position
-        Vector3 direction = (MockUpPlayer.instance.GetMousePosition() - MockUpPlayer.instance.transform.position).normalized;
-        fireBall_Skill.direction = direction;*/
-
+        Blackhole_Skill Blackhole_Skill = skill.GetComponent<Blackhole_Skill>();
+        Blackhole_Skill.spawnedSkillClass = this;
     }
 }
