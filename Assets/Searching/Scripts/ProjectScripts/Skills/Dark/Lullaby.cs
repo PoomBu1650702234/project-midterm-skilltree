@@ -5,6 +5,8 @@ using UnityEngine;
 public class Lullaby : Skill
 {
     [SerializeField] GameObject skillPref;
+    [SerializeField] int skillCounts = 10;
+    [SerializeField] float radius = 3f;
     public override void Activate()
     {
         if(skillPref == null)
@@ -12,15 +14,21 @@ public class Lullaby : Skill
             return;
         }
 
-        /*GameObject skill = Instantiate(skillPref);
-        skill.transform.position = MockUpPlayer.instance.transform.position;
+        for (int i = 0; i < skillCounts; i++)
+        {
+            float angle = (2 * Mathf.PI * i) / skillCounts; // Evenly distribute the angle
 
-        FireBall_Skill fireBall_Skill = skill.GetComponent<FireBall_Skill>();
-        fireBall_Skill.spawnedSkillClass = this;
+            float positionX = Mathf.Cos(angle) * radius; // Correct circular distribution
+            float positionY = Mathf.Sin(angle) * radius;
+            Vector3 skillPos = MockUpPlayer.instance.transform.position + new Vector3(positionX, positionY, 0);
 
-        // Calculate the direction from the player to the mouse position
-        Vector3 direction = (MockUpPlayer.instance.GetMousePosition() - MockUpPlayer.instance.transform.position).normalized;
-        fireBall_Skill.direction = direction;*/
+            GameObject skill = Instantiate(skillPref);
+            skill.transform.position = skillPos;
+
+            Lullaby_Skill lullaby_Skill = skill.GetComponent<Lullaby_Skill>();
+            lullaby_Skill.spawnedSkillClass = this;
+            lullaby_Skill.direction = (skill.transform.position - MockUpPlayer.instance.transform.position).normalized;
+        }
 
     }
 }

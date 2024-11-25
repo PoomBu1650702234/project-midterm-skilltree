@@ -3209,10 +3209,12 @@ MonoBehaviour:
   isChainReaction: 0
   isLock: 0
   skillPointCost: 0
-  skillDamage: 0
-  stunnDuration: 0
-  lifeTime: 10
-  skillPref: {fileID: 0}
+  skillDamage: 4
+  stunnDuration: 1
+  lifeTime: 5
+  skillPref: {fileID: 413190876647977884, guid: d0b3e25bdbb157d48ba90cfc52fc3cd8, type: 3}
+  skillCounts: 20
+  radius: 3
 --- !u!1 &718856745
 GameObject:
   m_ObjectHideFlags: 0
